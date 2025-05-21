@@ -1,0 +1,49 @@
+Server Program HW3 Submission One - Ideation Process
+
+Task I--------------------------------------------
+
+3 argument expectation:
+port number =>              server listens on the port
+Seed =>                     to initialize servers random number generator
+Number of Messages =>       specifies the number of messages each client will send
+
+java cs250.hw3.TCPServer <port-number> <seed> <number-Of-Messages>
+Example : java cs250.hw3.TCPServer 5000 42 10
+
+Yellow brick road:
+
+Step 1 :: validate port number
+                * port > 1024 && <= 65535
+                * if port out of range 
+                    -print error
+                    -exit
+Step 2 :: handle ServerSocket Creation
+                * Try to create a ServerSocket on port
+                * if busy, print exception message getMessage()
+Step 3 :: Initalize Random Number Generator
+                * user Random with seed provided
+
+Task II---------------------------------------------
+
+Registering 2 clients
+    # of msg that client should send back
+    rand seed gen by server
+ Each client connectes to server given hostname and port
+    Server should:
+        * accept connections from 2 clients
+        * Print confirmation msg when connected
+        * generate 2 random numbers using seed
+        * Send number of msg and random seed to each client in single msg
+        * print client hostname and assigned seed
+
+1 - serverSocket.accept() twice
+    store accepted client sockets in array
+2 - Print Connection confirmation
+    diplay clients hostname
+3 - Generate Rand Seeds
+    random class initialized w server seed
+    generate unique seed for each client
+4 - Send configuration to clients
+    Used DataOutputStream to send:
+        # of msg
+        rand seed
