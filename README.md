@@ -1,2 +1,2 @@
-# CS370_Homework_1
+# Initial Creation
 student
