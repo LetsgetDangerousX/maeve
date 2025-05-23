@@ -7,7 +7,7 @@ import java.util.*;
 
 public class BinaryTree implements TreeStructure {
 
-    private class Node {
+    private class Node  {
         int value;
         long timestamp;
         Node left;
